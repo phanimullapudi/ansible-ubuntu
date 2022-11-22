@@ -1,6 +1,6 @@
-- name: Configure MySQL
-  hosts: mysql
+- name: Configure HAProxy
+  hosts: haproxy
   remote_user: ansible
   become: yes
   roles:
-    - mysql
+    - geerlingguy.haproxy
