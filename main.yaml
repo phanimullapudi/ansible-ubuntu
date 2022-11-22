@@ -1,15 +1,13 @@
----
+- name: Configure MySQL
+  hosts: mysql
+  remote_user: ansible
+  become: yes
+  roles:
+    - mysql
 
-name: Configure MySQL
-hosts: mysql
-remote_user: ansible
-become: yes
-roles:
-  - mysql
-
-name: Install HAProxy
-hosts: haproxy
-remote_user: ansible
-become: yes
-roles:
-  - { role: geerlingguy.haproxy }
+- name: Install HAProxy
+  hosts: haproxy
+  remote_user: ansible
+  become: yes
+  roles:
+    - { role: geerlingguy.haproxy }
